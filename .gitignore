@@ -1,0 +1,6 @@
+CR/auto
+CR/cr.*
+!CR/cr.org
+_minted-cr
+images
+!images/*.eps

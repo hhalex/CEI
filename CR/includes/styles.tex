@@ -1,0 +1,139 @@
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[english]{varioref}
+\usepackage{subfig}
+
+% Aerer les tableaux
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{0.5cm}
+
+\makeatletter
+\definecolor{vert}{rgb}{0,0.5,0}
+\definecolor{vertclair}{rgb}{0.85,1,0.85}
+\definecolor{redclair}{rgb}{1,0.9,0.75}
+
+\titleformat*{\section}{\color{red}\scshape\bfseries\LARGE}
+\titleformat*{\subsection}{\scshape\bfseries\large}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+
+\dottedcontents{section}[5.5em]{}{3.2em}{1pc}
+
+\titlespacing*{\section}{1cm}{0.5cm}{0.5cm}
+\titlespacing*{\subsection}{1cm}{0.5cm}{0.3cm}
+\titlespacing*{\subsubsection}{1.75cm}{0.3cm}{0.3cm}
+
+\renewcommand{\thesection}{\textcolor{red}{\Roman{section}}}
+\renewcommand{\thesubsection}{\textcolor{blue}{\Alph{subsection}}}
+\renewcommand{\thesubsubsection}{\textcolor{vert}{\arabic{subsubsection}}}
+
+
+% Le vocabulaire
+\newcommand{\vocabulaire}[1]{\\ \begin{minipage}{1\textwidth}\textbf{Vocabulaire :} \begin{center}\begin{minipage}{0.8\textwidth}
+        #1
+      \end{minipage}\end{center}\end{minipage}}
+
+% les théorèmes
+\newtheorem{thm}{\textsc{Théorème}}
+\newcommand{\theoreme}[2]{
+  \begin{center}
+    \fcolorbox{red}{redclair}{
+      \begin{minipage}{0.9\textwidth}
+        \begin{thm}[\emph{#1}] \color{red} \ \newline
+              #2
+        \end{thm}
+      \end{minipage}}
+  \end{center}}
+
+% Résultat important
+\newcommand{\important}[1]{
+  \vskip 0.5cm
+  \fcolorbox{red}{white}{
+    \begin{minipage}[c]{0.9\linewidth}
+      #1
+    \end{minipage}
+  }
+  \vskip 0.5cm
+}
+
+% Les remarques
+\newtheorem{rmq}{Remarque}
+\newcommand{\remarque}[1]{
+  \fcolorbox{black}{white}{
+    \begin{minipage}{1\textwidth}
+      \begin{rmq}
+        #1
+      \end{rmq}
+    \end{minipage}}\smallskip}
+
+% Les lemmes
+\newtheorem{lem}{\textsc{Lemme}}
+\newcommand{\lemme}[2]{
+  \begin{center}
+    \fcolorbox{red}{white}{
+      \begin{minipage}{0.9\textwidth}
+        \begin{lem}
+          \label{#1}
+          \textcolor{red}{#2}
+        \end{lem}
+      \end{minipage}}
+  \end{center}\smallskip}
+
+% Les preuves
+\newcounter{pr}
+\newcommand{\preuve}[3]{
+  \addtocounter{pr}{1}
+  \begin{center}
+    \begin{minipage}{0.6\textwidth}
+      \begin{center}
+        \textbf{Démonstration \thepr \enspace-- #2 \ref{#1}}
+      \end{center}
+      #3
+    \end{minipage}
+  \end{center}\smallskip}
+
+% cas 1,2...
+\newlength{\caslength}
+\newcommand{\cas}[2]{
+  \begin{flushright}
+    \begin{minipage}{0.9\textwidth}
+      \settowidth{\caslength}{Cas #1 : }
+      \parbox[b]{\caslength}{\textbf{Cas #1 :}}
+      \parbox[t]{0.8\textwidth}{#2}
+    \end{minipage}
+  \end{flushright}
+}
+
+% méthode
+\newsavebox{\methodebox}
+\newenvironment{methode}[1]
+{\small\savebox{\methodebox}{\textsc{Méthode : #1 }}\usebox{\methodebox}\\
+  \begin{tabular}{rl}}
+  {\normalsize\end{tabular}}
+
+\newtheorem{exempletheoreme}{\textbf{Exemple}}
+\newenvironment{exemple}{
+  \begin{exempletheoreme}\normalfont \
+    \begin{center}
+      \begin{minipage}{0.9\textwidth}}
+      {\end{minipage}
+    \end{center}
+  \end{exempletheoreme}
+}
+
+
+% les définitions
+\newtheorem{definitiontheoreme}{\textbf{Définition}}
+\newcommand{\definition}[2]{
+  \begin{center}
+    \fcolorbox{vert}{vertclair}{
+      \begin{minipage}{1\textwidth}
+        \begin{definitiontheoreme} \normalfont (\emph{#1}) \color{vert} \newline
+          #2
+        \end{definitiontheoreme}
+      \end{minipage}}
+  \end{center}}

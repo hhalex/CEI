@@ -1,0 +1,36 @@
+#+TITLE: About infering on articles' translations in Wikipedia 
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER: \input{includes/styles.tex}
+
+#+LATEX: \include{page_garde}
+#+OPTIONS: title:nil
+#+OPTIONS: toc:nil
+
+\thispagestyle{empty}
+
+\newpage
+\thispagestyle{empty}
+#+TOC: headlines 3
+\thispagestyle{empty}
+\newpage
+
+#+LATEX: \listoffigures
+\thispagestyle{empty}
+\newpage
+
+#+LATEX: \listoftables
+\thispagestyle{empty}
+\newpage
+
+* Introduction
+* The currently adopted algorithm
+* A possible distributed solution (and ideas we came up with)
+* Deployment and testing
+* Results and comparison
+* References
+* Conclusion
+
+* Appendices
+** Overview of available NoSQL technologies
+** Hadoop & HBase installation
+** Automated deployment for dynamic environments (with OAR)
