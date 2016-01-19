@@ -28,3 +28,5 @@ La syntaxe utilisée pour la rédaction du rapport est [Org](http://orgmode.org/
 Latex + Pygments + Minted (pour colorer les extraits de code).
 
 On compile d'abord Org -> Latex avec Emacs (`C-c C-e l l`), et puis on exécute le makefile qui se charge de tout compiler comme il se doit vers le format .pdf (et supprime tous les fichiers temporaires utiles pendant la compilation).
+
+Finalement on va utiliser latex.
