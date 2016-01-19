@@ -1,6 +1,6 @@
 CR/auto
 CR/cr.*
-!CR/cr.org
+!CR/cr.tex
 _minted-cr
 images
 !images/*.eps
