@@ -23,12 +23,15 @@
 \newpage
 
 * Introduction
+Our aim is to find the missing cross links for an article :) 
+And to leave Supelec
 * The currently adopted algorithm
 * A possible distributed solution (and ideas we came up with)
 * Deployment and testing
 * Results and comparison
+
 * References
-* Conclusion
+* Conclusion 
 
 * Appendices
 ** Overview of available NoSQL technologies
