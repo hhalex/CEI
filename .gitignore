@@ -4,3 +4,5 @@ CR/cr.*
 _minted-cr
 images
 !images/*.eps
+.DS_Store
+hbase-0.98.17-hadoop2

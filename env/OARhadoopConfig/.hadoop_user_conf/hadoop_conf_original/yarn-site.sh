@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+
+  <property>
+     <name>yarn.nodemanager.aux-services</name>
+     <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+     <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+     <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+
+  <property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.dispatcher.exit-on-error</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.app.mapreduce.am.staging-dir</name>
+    <value>/user</value>
+  </property>
+
+  <property>
+    <name>yarn.resourcemanager.scheduler.address</name>
+    <value>$HADOOP_NAMENODE_NAME:8030</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <value>$HADOOP_NAMENODE_NAME:8031</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>$HADOOP_NAMENODE_NAME:8032</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.admin.address</name>
+    <value>$HADOOP_NAMENODE_NAME:8033</value>
+  </property>
+  <property>
+    <name>yarn.web-proxy.address</name>
+    <value>$HADOOP_NAMENODE_NAME:8034</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.webapp.address</name>
+    <value>$HADOOP_NAMENODE_NAME:8088</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.address</name>
+    <value>0.0.0.0:8050</value>
+  </property>
+    <property>
+    <name>yarn.nodemanager.localizer.address</name>
+    <value>0.0.0.0:8060</value>
+  </property>
+</configuration>
